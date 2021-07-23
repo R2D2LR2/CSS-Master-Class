@@ -1,0 +1,156 @@
+#2.2 CSS Grid Basic Concepts
+
+index.html
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Grid Box</title>
+  </head>
+  <body>
+    <div class="father">
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+      <div class="child">1</div>
+      <div class="child">2</div>
+      <div class="child">3</div>
+    </div>
+  </body>
+</html>
+
+style.css
+.father {
+  display: grid;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 100px 50px 300px;
+  gap: 10px 10px;
+}
+
+.child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: peru;
+  color: white;
+  font-size: 50px;
+}
+
+==================================================
+#2.3 Grid template Areas
+
+index.html
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Grid Box</title>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="header"></div>
+      <div class="content"></div>
+      <div class="nav"></div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
+
+style.css
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 200px);
+  grid-template-rows: repeat(4, 300px);
+  grid-template-areas:
+    "header   header  header  header"
+    "content  content .       nav"
+    "content  content .       nav"
+    "footer   footer  footer  footer";
+}
+.header {
+  background-color: #2ecc71;
+  grid-area: header;
+}
+.content {
+  background-color: #3498db;
+  grid-area: content;
+}
+.nav {
+  background-color: #8e44ad;
+  grid-area: nav;
+}
+.footer {
+  background-color: #f39c12;
+  grid-area: footer;
+}
+
+==================================================
+#2.4 rows and columns
+
+index.html
+<!DOCTYPE html>
+<html lang="kr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Grid Box</title>
+  </head>
+  <body>
+    <div class="grid">
+      <div class="header"></div>
+      <div class="content"></div>
+      <div class="nav"></div>
+      <div class="footer"></div>
+    </div>
+  </body>
+</html>
+
+style.css
+.grid {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(4, 100px);
+  grid-template-rows: repeat(4, 100px);
+}
+
+.header {
+  background-color: #2ecc71;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+.content {
+  background-color: #3498db;
+  grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.nav {
+  background-color: #8e44ad;
+  grid-row-start: 2;
+  grid-row-end: 4;
+}
+.footer {
+  background-color: #f39c12;
+  grid-column-start: 1;
+  grid-column-end: 5;
+}
+
+==================================================
+
+index.html
+
+style.css
+
